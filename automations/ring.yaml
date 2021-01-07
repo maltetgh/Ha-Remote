@@ -1,0 +1,32 @@
+ - alias: 'Ring Video Save 1'
+   trigger:
+   - platform: state
+     entity_id: sensor.ring_last_video_id_ulrike_indoor
+   action:
+   - service: downloader.download_file
+     data_template:
+       url: "{{ state_attr('camera.indoor', 'video_url') }}"
+       subdir: "{{state_attr('camera.indoor', 'friendly_name')}}"
+       filename: "Ring {{ states.sensor.indoor_last_activity.attributes.category }} {{ now().strftime('%Y-%m-%d %H:%M:%S') }}.mp4"
+
+ - alias: 'Ring Video Save 2'
+   trigger:
+   - platform: state
+     entity_id: sensor.ring_last_video_id_ulrike_tur
+   action:
+   - service: downloader.download_file
+     data_template:
+       url: "{{ state_attr('camera.ulrikes_klingel', 'video_url') }}"
+       subdir: "{{state_attr('camera.ulrikes_klingel', 'friendly_name')}}"
+       filename: "Ring {{ states.sensor.ulrikes_klingel_last_activity.attributes.category }} {{ now().strftime('%Y-%m-%d %H:%M:%S') }}.mp4"
+
+ - alias: 'Ring Video Save 3'
+   trigger:
+   - platform: state
+     entity_id: sensor.ring_last_video_id_malte_tur
+   action:
+   - service: downloader.download_file
+     data_template:
+       url: "{{ state_attr('camera.tur', 'video_url') }}"
+       subdir: "{{state_attr('camera.tur', 'friendly_name')}}"
+       filename: "Ring {{ states.sensor.tur_last_activity.attributes.category }} {{ now().strftime('%Y-%m-%d %H:%M:%S') }}.mp4"

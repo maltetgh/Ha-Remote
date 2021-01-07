@@ -1,0 +1,13 @@
+- platform: template
+  sensors:
+    ring_last_video_id_malte_tur:
+      value_template: '{{ states.camera.tur.attributes.last_video_id }}'
+      friendly_name: 'Ring last video ID Maltes Tür'
+
+    ring_last_video_id_ulrike_tur:
+      value_template: '{{ states.camera.ulrikes_klingel.attributes.last_video_id }}'
+      friendly_name: 'Ring last video ID Ulrikes Tür'
+
+    ring_last_video_id_ulrike_indoor:
+      value_template: '{{ states.camera.indoor.attributes.last_video_id }}'
+      friendly_name: 'Ring last video ID Ulrike Indoor'
