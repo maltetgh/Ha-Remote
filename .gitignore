@@ -1,0 +1,14 @@
+
+# ignore everything except config files
+/*
+!*.yaml
+!.gitignore
+!*.sh
+!/automations/
+!/blueprints/
+!/scripts/
+!/scenes
+secrets.yaml
+known_devices.yaml
+automations.yaml
+scenes.yaml
