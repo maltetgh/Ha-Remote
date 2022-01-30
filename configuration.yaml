@@ -6,6 +6,9 @@ default_config:
 tts:
   - platform: google_translate
 
+ifttt:
+  key: bI2jhcyQuwULrYOCezZX2v
+  
 downloader:
   download_dir: downloads
 
